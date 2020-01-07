@@ -27,3 +27,7 @@ RUN apt-get update && apt-get install -y \
         zip \
     && apt-get clean all
 
+# add shell
+ADD wait-for-tcp-close.sh /usr/local/bin/wait-for-tcp-close.sh
+RUN chmod +x /usr/local/bin/wait-for-tcp-close.sh
+
