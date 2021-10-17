@@ -1,7 +1,6 @@
-FROM nginx:1.17
+FROM nginx:latest
 
 ENV MYNGINX_VERSION build-target
-ENV MYNGINX_VERSION 1.17
 ENV MYNGINX_VERSION latest
 ENV MYNGINX_VERSION stable
 ENV MYNGINX_IMAGE mynginx
@@ -31,3 +30,6 @@ RUN apt-get update && apt-get install -y \
 ADD wait-for-tcp-close.sh /usr/local/bin/wait-for-tcp-close.sh
 RUN chmod +x /usr/local/bin/wait-for-tcp-close.sh
 
+# add conf
+COPY fs/etc/nginx/nginx.conf /etc/nginx/nginx.conf
+COPY fs/etc/nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf
