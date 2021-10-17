@@ -54,6 +54,9 @@ function f_docker_build() {
         $SUDO_DOCKER docker tag ${IMAGE_NAME}:$TAG_CAR ${IMAGE_NAME}:$i
     done
 
+    docker tag mynginx:latest docker.io/georgesan/mynginx:latest
+    docker push docker.io/georgesan/mynginx:latest
+
     return 0
 }
 
