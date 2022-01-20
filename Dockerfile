@@ -32,4 +32,4 @@ RUN chmod +x /usr/local/bin/wait-for-tcp-close.sh
 
 # add conf
 COPY fs/etc/nginx/nginx.conf /etc/nginx/nginx.conf
-COPY fs/etc/nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf
+COPY fs/etc/nginx/templates/default.conf.template /etc/nginx/templates/default.conf.template
